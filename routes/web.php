@@ -23,3 +23,4 @@ Route::post('/addproyecto', [ProyectoController::class, 'add']);
 Route::get('/delete/{id}', [ProyectoController::class, 'delete']);
 Route::get('/edit/{id}', [ProyectoController::class, 'edit']);
 Route::post('/edit/{id}', [ProyectoController::class, 'update']);
+Route::post('/import', [ProyectoController::class, 'import']);

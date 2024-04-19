@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ProyectosImport;
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProyectoController extends Controller
 {
@@ -41,6 +43,10 @@ class ProyectoController extends Controller
             'matricula' => $req->matricula,
             'proyecto' => $req->proyecto,
         ]);
+        return redirect()->back();
+    }
+    public function import(Request $req){
+        Excel::import(new ProyectosImport, $req->file('data_file'));
         return redirect()->back();
     }
 }

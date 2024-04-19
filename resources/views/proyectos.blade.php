@@ -415,6 +415,16 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
+    <div class="container mt-5">
+        <form method="POST" action="/import" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group mb-2">
+                <label for="data_file">archivo excel</label>
+                <input type="file" accept=".xlsx" class="form-control" id="data_file" name="data_file">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
     <table class="table mt-5">
         <thead>
             <tr>
